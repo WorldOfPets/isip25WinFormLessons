@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp2
+namespace WinFormsApp2.Database.Models
 {
     public class User
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
+
     }
 }

@@ -55,9 +55,11 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(240, 146);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // EditBtn
             // 
+            this.EditBtn.Enabled = false;
             this.EditBtn.Location = new System.Drawing.Point(93, 180);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(75, 23);
@@ -68,6 +70,7 @@
             // 
             // DeleteBtn
             // 
+            this.DeleteBtn.Enabled = false;
             this.DeleteBtn.Location = new System.Drawing.Point(174, 180);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
