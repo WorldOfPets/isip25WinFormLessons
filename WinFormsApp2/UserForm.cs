@@ -23,6 +23,11 @@ namespace WinFormsApp2
                 textBox1.Text = user.Name.ToString();
                 textBox2.Text = user.Age.ToString();
             }
+            context.Roles.Load();
+            comboBox1.DataSource = context.Roles.Local.ToList();
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "Id";
+            comboBox1.SelectedIndex = 1;
             this.user = user;
         }
 
@@ -30,10 +35,13 @@ namespace WinFormsApp2
         {
             this.user.Name = textBox1.Text;
             this.user.Age = Convert.ToInt32(textBox2.Text);
+            this.user.Role_id = (comboBox1.SelectedItem as Role).Id;
+            this.user.Role = comboBox1.SelectedItem as Role;
             context.SaveChanges();
             context.Database.CloseConnection();
             //this.user.Role = context.Roles.FirstOrDefault(x => x.Id == Convert.ToInt32(comboBox1.SelectedValue));
             DialogResult = DialogResult.OK;
         }
+
     }
 }
